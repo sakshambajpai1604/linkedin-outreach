@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LinkedInProfile } from '../types';
+import type { LinkedInProfile } from '../types';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/personalized-message';
@@ -22,7 +22,7 @@ const MessageGenerator = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const res = await axios.post(API_URL, form);
-    setMessage(res.data.message);
+    setMessage((res.data as { message: string }).message);
   };
 
   return (

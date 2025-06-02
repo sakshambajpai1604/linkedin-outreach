@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Campaign } from '../types';
+import type { Campaign } from '../types';
 import axios from 'axios';
 
 const defaultForm: Campaign = {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Campaign } from '../types';
+import type { Campaign } from '../types';
 import axios from 'axios';
-import CampaignForm from './CampaignForm';
+import CampaignForm from '../components/CampaignForm';
 
 const API_URL = 'http://localhost:5000/campaigns';
 
@@ -11,7 +11,7 @@ const CampaignList = () => {
 
   const fetchCampaigns = async () => {
     const res = await axios.get(API_URL);
-    setCampaigns(res.data);
+    setCampaigns(res.data as Campaign[]);
   };
 
   const handleDelete = async (id: string) => {

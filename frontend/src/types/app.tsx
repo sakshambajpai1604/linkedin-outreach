@@ -1,5 +1,5 @@
-import CampaignList from './components/CampaignList';
-import MessageGenerator from './components/MessageGenerator';
+import CampaignList from '../components/CampaignList';
+import MessageGenerator from '../components/MessageGenerator';
 
 function App() {
   return (
